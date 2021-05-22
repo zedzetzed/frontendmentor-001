@@ -4,15 +4,14 @@
 /*-------------------- CSS reset --------------------*/
 html, body, div, span, a, h1, h2, h3, h4, h5, h6, p, blockquote, img, 
 ol, ul, li, input, label, select, table, tbody, tfoot, thead, tr, th, 
-td, footer, header, menu, nav, section, video, figure {
+td, footer, header, menu, nav, section, video, figure, main {
     margin: 0;
     padding: 0;
-    font-size: 100%;
     list-style: none;
     border: 0;
     font-size: 15px;
     font-family: 'Inter', sans-serif;
-    box-sizing: border-box;ě
+    box-sizing: border-box;
 }
 
 /*-------------------- typography --------------------*/
@@ -36,9 +35,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 11.8em;
     background: hsl(233, 47%, 7%);
     color: hsl(0, 0%, 100%);
-    height: 100vh;
 }
 main {
     display: flex;
@@ -52,29 +51,19 @@ main {
 
 /*-------------------- right --------------------*/
 
-.picture {
-    position: relative;
-    width: 48.5%;
-}
-.image,
-.overlay {
-    width: 100%;
-    height: 100%;
-}
 .image {
+    flex-basis: 48.6%;
+    background-color: rgb(110, 60, 139);
     background-image: url('../images/image-header-desktop.jpg');
     background-size: cover;
-}
-.overlay {
-    position: absolute;
-    background-color: rgba(171, 57, 224, 0.4);
+    background-blend-mode: soft-light;
 }
 
 /*-------------------- left --------------------*/
 
 section {
-    width: 50%;
-    padding: 4.7em 7em 4.2em 4.66em;
+    padding: 4.7em 7em 4.2em 4.7em;
+    flex-basis: 50%;
 }
 section > p {
     color: hsla(0, 0%, 100%, 0.75);
@@ -84,7 +73,7 @@ section > p {
 .stats {
     display: flex;
     justify-content: space-between;
-    padding-right: 2.3em;
+    padding-right: 1.9em;
 }
 .stat p {
     text-transform: uppercase;
@@ -106,35 +95,33 @@ footer p {
 
 /*-------------------- media query --------------------*/
 
-@media only screen and (max-width: 868px) {
+@media only screen and (max-width: 1159px) {
+    body {
+        padding-top: 5.9em;
+    }
     h1,
     span {
-        font-size: 1.8rem;
+        font-size: 1.75rem;
+        letter-spacing: 1px;
+        margin-bottom: .6em;
     }
     main {
         flex-direction: column-reverse;
         width: 87%;
-        height: auto;
-        margin-top: 7em;
-    }
-    body {
-        height: auto;
-    }
-    .picture {
-        width: 100%;
-        height: 16em;
     }
     .image {
+        width: 100%;
+        height: 16em;
+        flex-basis: unset;
         background-image: url('../images/image-header-mobile.jpg');
     }
     section {
         width: 100%;
-        padding: 1.8em;
-        margin-top: 1em;
+        padding: 2.7em 1.8em;
         text-align: center;
     }
     section > p {
-        margin-bottom: 3em;
+        margin-bottom: 2.6em;
     }
     .stats {
         padding: 0;
